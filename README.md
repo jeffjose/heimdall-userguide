@@ -17,13 +17,19 @@ v1.4.1
 
 ### Flash a modem
 
-**Step 1** - Download the modem
+**Step 1 - Download the modem**
+
+
 Modems typically come with `.bin` extension. If you get a `rar` or `tar`, unpack it first
 
-**Step 2** - Boot into Download mode
+**Step 2 - Boot into Download mode**
+
+
 If you have `adb` connected, do `adb reboot download`. You could also long press power button, select Reboot > Download
 
-**Step 3** - Make `heimdall` detect for good measure
+**Step 3 - Make `heimdall` detect for good measure**
+
+
 Once you're in the download mode, run `heimdall detect`
 
 ```
@@ -31,8 +37,10 @@ Once you're in the download mode, run `heimdall detect`
 Device detected
 ```
 
-**Step 4** - Find the right partition
-Parition Information is in the PIT files. Download the PIT file using
+**Step 4 - Find the right partition**
+
+
+Partition Information is in the PIT files. Download the PIT file using
 
 Note: Entry #1 says **MDM**. That's what we want. Yours might say **MODEM** or **modem**. Make a note of that.
 
@@ -141,7 +149,9 @@ FOTA Filename:
 
 ```
 
-**Step 5** - Flash the modem (Try 1)
+**Step 5 - Flash the modem (Try 1)**
+
+
 While flashing once is good enough for a lot of other things, I've found that I had to flash it twice in a specific manner to make the modem sticky.
 
 `--no-reboot` is required so that you can prevent the device from booting up, and flash the modem again.
@@ -187,20 +197,28 @@ Ending session...
 Releasing device interface...
 ```
 
-**Step 6** - Remove Battery > Remove USB Connection > Press Vol Down + Power + Menu to boot into Download mode
+**Step 6 - Remove Battery > Remove USB Connection > Press Vol Down + Power + Menu to boot into Download mode**
+
 
 We're getting ready to flash again.
 
-** Step 7** - Flash modem (Try 2)
+
+**Step 7 - Flash modem (Try 2)**
+
 
 Same instructions as above
 ```
 %> heimdall flash --MDM /path/to/modem.bin --no-reboot
 ```
 
-**Step 8** - repeat Step #6, but boot normally (skip the vol down + power + menu part)
+**Step 8 - repeat Step #6, but boot normally**
 
-**Step 9** - Confirm the new baseband with `adb`
+
+Skip the vol down + power + menu bit
+
+
+**Step 9 - Confirm the new baseband with `adb`**
+
 
 ```
 %> adb shell getprop | grep baseband
