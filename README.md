@@ -226,5 +226,5 @@ Skip the vol down + power + menu bit
 
 ```
 %> adb shell getprop | grep baseband
-[gsm.version.baseband]: [I9505ZHUFNB3]
+[gsm.version.baseband]: [I9505XXUGNG2]
 ```
