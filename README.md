@@ -1,5 +1,8 @@
 ### Heimdall User Guide
 
+![header](https://raw.githubusercontent.com/jeffjose/heimdall-userguide/master/header.png)
+
+
 Heimdall is a cross-platform open-source tool suite used to flash firmware (aka ROMs) onto Samsung mobile devices.
 
 Download - http://glassechidna.com.au/heimdall/
